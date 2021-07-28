@@ -1,0 +1,82 @@
+*,
+::before,
+::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	background: #fefefe;
+}
+
+.select {
+	width: 400px;
+	margin: 0 auto;
+	position: relative;
+	user-select: none;
+}
+
+.select .select__btn {
+	padding: 10px 20px;
+	background-color: #fff;
+	box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
+	font-weight: 700;
+	color: #333;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.select .select__content {
+	position: absolute;
+	top: 110%;
+	left: 0;
+	width: 100%;
+	background-color: #fff;
+	box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
+	font-weight: 500;
+	color: #333;
+}
+
+.select .select__item {
+	padding: 10px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+.select .select__item:hover {
+	background-color: #e7e7e7;
+}
+
+.select .select__arrow {
+	position: relative;
+	transition: all 0.3s ease;
+}
+
+.select .select__arrow::before,
+.select .select__arrow::after {
+	content: "";
+	position: absolute;
+	width: 7px;
+	height: 2px;
+	background-color: #222;
+	border-radius: 2px;
+	transition: all 0.2s ease;
+}
+
+.select .select__arrow::before {
+	transform: rotate(45deg);
+	left: 0;
+}
+.select .select__arrow::after {
+	transform: rotate(-45deg);
+	right: -3px;
+}
+
+.select.active .select__arrow::before {
+	transform: rotate(-45deg);
+}
+.select.active .select__arrow::after {
+	transform: rotate(45deg);
+}
